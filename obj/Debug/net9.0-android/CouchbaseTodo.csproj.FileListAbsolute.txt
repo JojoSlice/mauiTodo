@@ -968,3 +968,4 @@ C:\Users\Johan\source\repos\CouchbaseTodo\CouchbaseTodo\obj\Debug\net9.0-android
 C:\Users\Johan\source\repos\CouchbaseTodo\CouchbaseTodo\obj\Debug\net9.0-android\resizetizer\6CD7C47F03026257-files.cache
 C:\Users\Johan\source\repos\CouchbaseTodo\CouchbaseTodo\obj\Debug\net9.0-android\assets\OpenSans-Regular.ttf
 C:\Users\Johan\source\repos\CouchbaseTodo\CouchbaseTodo\obj\Debug\net9.0-android\assets\OpenSans-Semibold.ttf
+C:\Users\Johan\source\repos\CouchbaseTodo\CouchbaseTodo\obj\Debug\net9.0-android\CouchbaseTodo.sourcelink.json

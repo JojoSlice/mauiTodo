@@ -64,7 +64,7 @@ public partial class MainPageViewModel : ObservableObject
     public async Task DeleteTask(Models.ToDoTask task)
     {
         LastDeletedTask = task;
-        //await _databaseService.DeleteTaskAsync(task.Id);
+        await _databaseService.DeleteTaskAsync(task.Id);
         TaskItems.Remove(task);
         LoadTasks();
 

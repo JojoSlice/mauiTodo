@@ -11,7 +11,7 @@ public partial class MainPageViewModel : ObservableObject
     private readonly Services.DatabaseService _databaseService;
 
     public ICommand DeleteCommand => new RelayCommand<Models.ToDoTask>(async task => await DeleteTask(task));
-    public ICommand ToggleCommand => new RelayCommand<Models.ToDoTask>(async task => await ToggleTask(task));
+   // public ICommand ToggleCommand => new RelayCommand<Models.ToDoTask>(async task => await ToggleTask(task));
 
     public ObservableCollection<Models.ToDoTask> TaskItems { get; set; } = new();
 
@@ -55,18 +55,17 @@ public partial class MainPageViewModel : ObservableObject
     }
 
 
-    public async Task ToggleTask(Models.ToDoTask task)
-    {
-        task.Completed = !task.Completed;
-        await _databaseService.UpdateTaskAsync(task);
-    }
+    //public async Task ToggleTask(Models.ToDoTask task)
+    //{
+    //    task.Completed = !task.Completed;
+    //    await _databaseService.UpdateTaskAsync(task);
+    //}
 
     public async Task DeleteTask(Models.ToDoTask task)
     {
         LastDeletedTask = task;
         await _databaseService.DeleteTaskAsync(task.Id);
         TaskItems.Remove(task);
-        LoadTasks();
 
         await Snackbar.Make(
         "Task deleted",

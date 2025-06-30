@@ -8,7 +8,7 @@
     x:Class="CouchbaseTodo.MainPage"
     x:Name="ThisPage">
 
-    <VerticalStackLayout Padding="20" Spacing="20">
+    <VerticalStackLayout Padding="20" Spacing="20" Margin="5">
 
 
         <CollectionView ItemsSource="{Binding TaskItems}" Margin="5">
@@ -26,26 +26,32 @@
                             </Border.StrokeShape>
                             
                             
-                                <Grid ColumnSpacing="10" ColumnDefinitions="auto, auto, auto, auto">
-                                    <Button 
+                                <Grid ColumnSpacing="10" ColumnDefinitions="50, auto, auto, 30">
+                                                                        
+                                    <Label 
+                                        Text="{Binding Text}"
                                         Grid.Column="0"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainPageViewModel}}, Path=ToggleCommand}"
-                                        ImageSource="box.png"
-                                        WidthRequest="25"
-                                        HeightRequest="25">
+                                        Grid.ColumnSpan="3"
+                                        Padding="3"
+                                        Margin="5"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center">
                                         
-                                    </Button>
-                                    
-                                    <Label Text="{Binding Text}" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+                                    </Label>
 
-                                <Button 
-                                    Grid.Column="3"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainPageViewModel}}, Path=DeleteCommand}"
-                                    ImageSource="trash.png" 
-                                    WidthRequest="25" 
-                                    HeightRequest="25">
+                                    <Button 
+                                        BackgroundColor="White"
+                                        Grid.Column="3"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainPageViewModel}}, Path=DeleteCommand}"
+                                        CommandParameter="{Binding .}"
+                                        ImageSource="trash.png" 
+                                        WidthRequest="50" 
+                                        HeightRequest="50"
+                                        Margin="5">
                                     
-                                </Button>
+                                    </Button>
                                     
                                 </Grid>
                         </Border>

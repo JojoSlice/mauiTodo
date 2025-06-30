@@ -53,6 +53,7 @@ namespace CouchbaseTodo.Services
         // CREATE
         public async Task AddTaskAsync(Models.ToDoTask task)
         {
+            Console.WriteLine("DB CREATE");
             try
             {
                 var mutableDoc = new MutableDocument(task.Id);
@@ -72,6 +73,7 @@ namespace CouchbaseTodo.Services
         // READ ALL
         public async Task<List<Models.ToDoTask>> GetAllTasksAsync()
         {
+            Console.WriteLine("DB READ ALL");
             var tasks = new List<Models.ToDoTask>();
 
             try
@@ -113,6 +115,7 @@ namespace CouchbaseTodo.Services
         // READ BY ID
         public async Task<Models.ToDoTask?> GetTaskByIdAsync(string id)
         {
+            Console.WriteLine("DB READ ID");
             return await Task.Run(() =>
             {
                 var doc = _collection.GetDocument(id);
@@ -132,6 +135,7 @@ namespace CouchbaseTodo.Services
         // UPDATE
         public async Task UpdateTaskAsync(Models.ToDoTask task)
         {
+            Console.WriteLine("DB UPDATE");
             try
             {
                 var doc = await Task.Run(() => _collection.GetDocument(task.Id));
@@ -157,6 +161,7 @@ namespace CouchbaseTodo.Services
         // DELETE
         public async Task DeleteTaskAsync(string id)
         {
+            Console.WriteLine("DB DELETE");
             try
             {
                 var doc = await Task.Run(() => _collection.GetDocument(id));

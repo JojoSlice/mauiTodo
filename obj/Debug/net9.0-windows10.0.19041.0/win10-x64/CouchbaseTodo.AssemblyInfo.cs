@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CouchbaseTodo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e7512c58c28ca4254843f795d2ee000ea9a47e33")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ce916c96c13f7ecdcb564176edbe881911208b89")]
 [assembly: System.Reflection.AssemblyProductAttribute("CouchbaseTodo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CouchbaseTodo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

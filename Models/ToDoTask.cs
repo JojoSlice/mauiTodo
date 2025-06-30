@@ -13,7 +13,7 @@ namespace CouchbaseTodo.Models
     public class ToDoTask
     {
         [JsonPropertyName("_id")]
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
         [JsonPropertyName("type")]
         public string Type { get; set; } = "task";
@@ -22,26 +22,15 @@ namespace CouchbaseTodo.Models
         public string Text { get; set; }
 
         [JsonPropertyName("completed")]
-        public bool Completed { get; set; }
+        public bool Completed { get; set; } = false;
 
         [JsonPropertyName("createdAt")]
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get; set; } = DateTime.UtcNow.ToString("o");
+        [JsonIgnore]
+        public string Icon => Completed ? "checkbox.png" : "box.png";
 
         public ToDoTask() 
         {
-        }
-
-        public ToDoTask(string? id = null, string text = "", bool completed = false, DateTime? createdAt = null)
-        {
-            Id = id ?? GenerateId();
-            Text = text;
-            Completed = completed;
-            CreatedAt = (createdAt ?? DateTime.UtcNow).ToString("o"); // ISO 8601
-        }
-
-        private string GenerateId()
-        {
-            return $"task_{DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()}_{new Random().Next(10000)}";
         }
 
         public static ToDoTask FromJson(string json)
